@@ -2,16 +2,20 @@ import java.util.ArrayList;
 import java.util.Random;
 public class CitySim {
     public static void main(String[] args){
+        if(args.length ==0 || args.length >1 ){
+            System.out.println("Please enter one integer argument");
+            System.exit(0);
+        }      
+        try{
+            Integer.parseInt(args[0]);
+        } catch(Exception e){
+            System.out.println("Enter one integer argument");
+            System.exit(0);
+        }
         Random r = new Random();
         Random r2 = new Random();
         int seed = Integer.parseInt(args[0]);
         r.setSeed(seed);
-        // try{
-        //     seed = 
-        //     r.setSeed(seed);
-        // }catch (Exception e){
-        //     System.out.println("Enter integer");
-        // }
         Location hotel = new Location("Hotel");
         Location diner = new Location("Diner");
         Location library = new Location("Library");
@@ -37,7 +41,8 @@ public class CitySim {
         //fifth_ave.add(library);
         //fifth_ave.add(philadelphia);
         for(int i =1; i<=5; i ++){
-            starting_location = locations[r2.nextInt(3)+1];
+            //starting_location = locations[r2.nextInt(3)+1];
+            starting_location = hotel;
             Driver d = new Driver(starting_location);
             current_location = starting_location;  
             Avenue current_ave = d.getCurrentAvenue(current_location);
@@ -45,9 +50,9 @@ public class CitySim {
             // System.out.println(current_location.getLocationName());
             // System.out.println(current_ave.getAvenueName());
             // System.out.println(current_street.getStreetName());
-            if(current_location == philadelphia || current_location ==cleveland){
-                System.out.println("outside");
-            }
+            // if(current_location == philadelphia || current_location ==cleveland){
+            //     System.out.println("outside");
+            // }
             while((!(current_location.getLocationName().equals("Philadelphia"))) && (!(current_location.getLocationName().equals("Cleveland")))){
                 if((r.nextInt(seed) %2) == 0){
                     starting_location = current_location;
