@@ -9,7 +9,7 @@ public class Location{
         name_of_location = name;
     }
 
-    public String getLocation(){
-        return name_of_location;
+    public String getLocationName(){
+        return this.name_of_location;
     }
 }

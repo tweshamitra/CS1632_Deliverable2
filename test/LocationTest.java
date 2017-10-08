@@ -16,7 +16,7 @@ public class LocationTest{
     }
 
     @Test
-    public void testGetLocation(){
-        assertEquals("Hotel", test_class.getLocation());
+    public void testGetLocationName(){
+        assertEquals("Hotel", test_class.getLocationName());
     }
 }

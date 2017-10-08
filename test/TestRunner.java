@@ -8,8 +8,8 @@ public class TestRunner{
         ArrayList<Class> classes_to_test = new ArrayList<Class>();
         boolean any_failures = false;
         classes_to_test.add(LocationTest.class);
-       // classes_to_test.add(StreetTest.class);
-        //classes_to_test.add(AvenueTest.class);
+        classes_to_test.add(StreetTest.class);
+        classes_to_test.add(AvenueTest.class);
 
         for(Class c: classes_to_test){
             Result r = JUnitCore.runClasses(c);
@@ -21,12 +21,13 @@ public class TestRunner{
             if(!r.wasSuccessful()){
                 any_failures = true;
             }
+        }
 
-            if(any_failures){
-                System.out.println("\n!!! - at least one failure, see above.");
-            } else {
-                System.out.println("\nALL TESTS PASSED");
-            }
+        if(any_failures){
+            System.out.println("\n!!! - at least one failure, see above.");
+        } else {
+            System.out.println("\nALL TESTS PASSED");
         }
     }
+    
 }
