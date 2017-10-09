@@ -19,8 +19,8 @@ public class StreetTest{
     }
     
     @Test
-    public void testGetStreet(){
-        assertEquals("Bill St.", test_street.getStreet());
+    public void testGetStreetName(){
+        assertEquals("Bill St.", test_street.getStreetName());
     }
 
     @Test

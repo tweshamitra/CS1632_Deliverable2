@@ -1,20 +1,10 @@
 public class Driver{
-    private Location current_location;
     private Location starting_location;
     private Avenue current_ave;
     private Street current_street;
 
     public Driver(Location starting){
         this.starting_location = starting;
-        current_location = starting_location;
-    }
-
-    public Location getCurrentLocation(){
-        return this.current_location;
-    }
-    
-    public void goToLocation(Location location){
-        this.current_location = location;
     }
 
     public Street getCurrentStreet(Location location){
@@ -28,7 +18,7 @@ public class Driver{
     }
 
     public Avenue getCurrentAvenue(Location location){
-        if((location.getLocationName().equals("Hotel")) ||(starting_location.getLocationName().equals("Diner"))){
+        if((location.getLocationName().equals("Hotel")) || (starting_location.getLocationName().equals("Diner"))){
             current_ave = new Avenue("Fourth Ave");
         }
         else if((location.getLocationName().equals("Library")) ||(starting_location.getLocationName().equals("Coffee"))){

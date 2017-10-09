@@ -1,41 +1,33 @@
 //This class represents one way avenues
 public class Avenue{
     private String name_of_avenue;
-    // private Location start;
-    // private Location end;
 
     public Avenue(String name){
         name_of_avenue = name;
     }
-    // public Avenue(String name, Location start, Location end){
-    //     name_of_avenue = name;
-    //     this.start = start;
-    //     this.end = end;
-    // }
 
     public String getAvenueName(){
         return name_of_avenue;
     }
 
-    public Location getOtherLocation(Avenue ave, Location loc){
-        if(ave.name_of_avenue.equals("Fourth Ave")){
+    public Location getOtherLocation(Location loc){
+        Location location_to_return = null;
+        if(name_of_avenue.equals("Fourth Ave")){
             if(loc.getLocationName().equals("Hotel")){
-                return new Location("Diner");
+                location_to_return =  new Location("Diner");
             }
-            else// if(loc.getLocationName().equals("Diner"))
-            {
-                return new Location("Cleveland");
+            if(loc.getLocationName().equals("Diner")){
+                location_to_return = new Location("Outside City");
             }
         }
-        else //if(ave.name_of_avenue.equals("Fifth Ave"))
-        {
+       else{
             if(loc.getLocationName().equals("Coffee")){
-                return new Location("Library");
-            }
-            else //if(loc.getLocationName().equals("Library"))
-            {
-                return new Location("Philadelphia");
+                location_to_return =  new Location("Library");
+            } 
+            if(loc.getLocationName().equals("Library")){
+                location_to_return = new Location("Outside City");
             }
         }
+        return location_to_return;
     }
 }
