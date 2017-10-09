@@ -4,14 +4,15 @@ public class CitySim {
 
     public static Street getCurrentStreet(Location curr, Location start){
         Street current_street = null;
-        if((curr.getLocationName().equals("Hotel")) ||(start.getLocationName().equals("Library"))){
+        if((curr.getLocationName().equals("Hotel")) || (start.getLocationName().equals("Library"))){
             current_street = new Street("Bill St", new Location("Hotel"), new Location("Library"));
         }
-        else if((curr.getLocationName().equals("Diner")) ||(start.getLocationName().equals("Coffee"))){
+        else if((curr.getLocationName().equals("Diner")) || (start.getLocationName().equals("Coffee"))){
             current_street = new Street("Phil St", new Location("Diner"), new Location("Coffee"));
         }
         return current_street;
     }
+
     public static Avenue getCurrentAvenue(Location curr, Location start){
         Avenue current_avenue = null;
         if((curr.getLocationName().equals("Hotel")) || (start.getLocationName().equals("Diner"))){
@@ -22,7 +23,6 @@ public class CitySim {
         }
         return current_avenue;
     }
-
 
     public static void main(String[] args){
         if(args.length ==0 || args.length >1 ){

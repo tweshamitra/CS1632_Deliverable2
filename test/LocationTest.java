@@ -19,4 +19,10 @@ public class LocationTest{
     public void testGetLocationName(){
         assertEquals("Hotel", test_class.getLocationName());
     }
+
+    @Test
+    public void testEmtpyLocation(){
+        Location test = new Location("");
+        assertEquals(test.getLocationName(), "");
+    }
 }

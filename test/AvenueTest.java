@@ -3,13 +3,9 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 public class AvenueTest{
-    Avenue test_avenue;
     Location l_1 = mock(Location.class);
     Location l_2 = mock(Location.class);
-    @Before
-    public void setup(){
-        test_avenue = new Avenue("Fourth Ave", l_1, l_2);
-    }
+    Avenue test_avenue  = new Avenue("Fourth Ave", l_1, l_2);
 
     @Test 
     public void testAvenueExists(){
@@ -37,14 +33,21 @@ public class AvenueTest{
     public void testGetOtherLocationFourthAve(){
         when(l_1.getLocationName()).thenReturn("Hotel");
         when(l_2.getLocationName()).thenReturn("Diner");
-        assertEquals(test_avenue.getOtherLocation(l_1).getLocationName(), "Diner" );
+        assertEquals(test_avenue.getOtherLocation(l_1), l_2);
+    }
+
+    @Test
+    public void testGetOtherLocationFifthAve(){
+        when(l_1.getLocationName()).thenReturn("Coffee");
+        when(l_2.getLocationName()).thenReturn("Library");
+        assertEquals(test_avenue.getOtherLocation(l_1), l_2);
     }
 
     @Test
     public void testGetOtherLocationFourthAveFlipped(){
-        when(l_1.getLocationName()).thenReturn("Hotel");
-        when(l_2.getLocationName()).thenReturn("Diner");
-        assertEquals(test_avenue.getOtherLocation(l_2).getLocationName(), "Outside City" );
+        when(l_1.getLocationName()).thenReturn("Diner");
+        when(l_2.getLocationName()).thenReturn("Outside");
+        assertEquals(test_avenue.getOtherLocation(l_1), l_2);
     }
 
 }

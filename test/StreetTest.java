@@ -26,14 +26,14 @@ public class StreetTest{
     public void testGetOtherLocationBillSt(){
         when(l_1.getLocationName()).thenReturn("Hotel");
         when(l_2.getLocationName()).thenReturn("Library");
-        assertEquals(test_street.getOtherLocation(l_1).getLocationName(), "Library");
+        assertEquals(test_street.getOtherLocation(l_1),l_2);
     }
 
     @Test
     public void testGetOtherLocationPhilSt(){
         when(l_1.getLocationName()).thenReturn("Coffee");
         when(l_2.getLocationName()).thenReturn("Diner");
-        assertEquals(test_street.getOtherLocation(l_1).getLocationName(), "Diner");
+        assertEquals(test_street.getOtherLocation(l_1), l_2);
     }
 
     @Test

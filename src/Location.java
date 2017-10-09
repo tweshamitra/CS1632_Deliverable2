@@ -1,3 +1,6 @@
+/*  This class stores information about a location. It simply has a method to 
+    return the name of the location. 
+*/
 public class Location{
     private String name_of_location;
 

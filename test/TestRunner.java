@@ -10,7 +10,7 @@ public class TestRunner{
         classes_to_test.add(LocationTest.class);
         classes_to_test.add(StreetTest.class);
         classes_to_test.add(AvenueTest.class);
-
+        classes_to_test.add(CitySimTest.class);
         for(Class c: classes_to_test){
             Result r = JUnitCore.runClasses(c);
 
